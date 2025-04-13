@@ -1,0 +1,17 @@
+{
+  "name": "socketchatpeerserver",
+  "version": "1.0.0",
+  "description": "This is a socket server",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install && npm run build"
+  },
+  "author": "Yaksh Maishery",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "multer": "^1.4.5-lts.2",
+    "socket.io": "^4.8.1"
+  }
+}
