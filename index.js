@@ -47,6 +47,15 @@ io.on('connection', (socket) => {
    socket.on("CHATMESSAGES",({Message,MessageType,datetime,loginID,AnotherID})=>{
       socket.broadcast.emit("CHATMESSAGESAnother",{Message,MessageType,datetime,loginID,AnotherID})
    })
+   socket.on("startFileTransfer",({type,name,size,AnotherID})=>{
+      socket.broadcast.emit("startFileTransferAnother",{type,name,size,AnotherID})
+   })
+   socket.on("chunkFileTransfer",({type,name,size,data,offset,AnotherID})=>{
+      socket.broadcast.emit("chunkFileTransferAnother",{type,name,size,data,offset,AnotherID})
+   })
+   socket.on("endFileTransfer",({type,name,AnotherID})=>{
+      socket.broadcast.emit("endFileTransferAnother",{type,name,AnotherID})
+   })
 })
 
 // Start the server
