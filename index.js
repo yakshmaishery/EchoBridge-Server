@@ -56,6 +56,9 @@ io.on('connection', (socket) => {
    socket.on("endFileTransfer",({type,name,AnotherID})=>{
       socket.broadcast.emit("endFileTransferAnother",{type,name,AnotherID})
    })
+   socket.on("endFileTransferAnotherCALLBACK",({msg,UserID,AnotherID})=>{
+      socket.broadcast.emit("endFileTransferUserCALLBACK",{msg,UserID,AnotherID})
+   })
 })
 
 // Start the server
